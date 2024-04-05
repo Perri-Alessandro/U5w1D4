@@ -3,14 +3,12 @@ package perriAlessandro.U5w1D4.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
-@ToString
 @Table(name = "pizza")
 public class Pizza extends Item {
 
@@ -38,5 +36,17 @@ public class Pizza extends Item {
         this.nome = nome;
         this.toppingList = toppingList;
         this.isXl = isXl;
+    }
+
+    @Override
+    public String toString() {
+        return "Pizza{" +
+                "toppingList=" + toppingList +
+                ", isXl=" + isXl +
+                ", nome='" + nome + '\'' +
+                ", id=" + id +
+                ", prezzo=" + prezzo +
+                ", calorie=" + calorie +
+                '}';
     }
 }

@@ -1,6 +1,5 @@
 package perriAlessandro.U5w1D4;
 
-import com.github.javafaker.Faker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,13 +7,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import perriAlessandro.U5w1D4.dao.PizzaService;
 import perriAlessandro.U5w1D4.entities.Menù;
-import perriAlessandro.U5w1D4.entities.Pizza;
 import perriAlessandro.U5w1D4.entities.Tavolo;
-import perriAlessandro.U5w1D4.entities.Topping;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 @Component
@@ -35,24 +30,24 @@ public class MyRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Faker fake = new Faker();
-        Random rnd = new Random();
-
-        List<Topping> ingredienti = new ArrayList<>();
-        int numeroIngredienti = 3 + rnd.nextInt(5);
-
-        for (int i = 0; i < numeroIngredienti; i++) {
-            String nomeIngrediente = fake.food().ingredient();
-            double prezzoIngrediente = 0.5 + (2 - 0.5) * rnd.nextDouble();
-            int calorie = 50 + rnd.nextInt(160);
-            ingredienti.add(new Topping(nomeIngrediente, prezzoIngrediente, calorie));
-        }
-
-
-        Pizza newPizza = new Pizza(fake.funnyName().name(), fake.number().numberBetween(6, 10), ingredienti, fake.number().numberBetween(800, 1600), fake.bool().bool());
-
-        pizzaService.savePizza(newPizza);
-
+//        Faker fake = new Faker();
+//        Random rnd = new Random();
+//
+//        List<Topping> ingredienti = new ArrayList<>();
+//        int numeroIngredienti = 3 + rnd.nextInt(5);
+//
+//        for (int i = 0; i < numeroIngredienti; i++) {
+//            String nomeIngrediente = fake.food().ingredient();
+//            double prezzoIngrediente = 0.5 + (2 - 0.5) * rnd.nextDouble();
+//            int calorie = 50 + rnd.nextInt(160);
+//            ingredienti.add(new Topping(nomeIngrediente, prezzoIngrediente, calorie));
+//        }
+//
+//
+//        Pizza newPizza = new Pizza(fake.funnyName().name(), fake.number().numberBetween(6, 10), ingredienti, fake.number().numberBetween(800, 1600), fake.bool().bool());
+//
+//        pizzaService.savePizza(newPizza);
+//
         System.out.println("------------------ FIND PIZZA BY NAME --------------------");
         pizzaService.findByName("Al Dente").forEach(System.out::println);
 
