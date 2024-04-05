@@ -40,4 +40,12 @@ public class PizzaService {
         log.info("Pizza salvata correttamente");
         System.out.println();
     }
+
+    public List<Pizza> findByName(String nome) {
+        return pizzaDAO.findByNome(nome);
+    }
+
+    public List<Pizza> filterPiùCostose() {
+        return pizzaDAO.filterByBigPrice();
+    }
 }

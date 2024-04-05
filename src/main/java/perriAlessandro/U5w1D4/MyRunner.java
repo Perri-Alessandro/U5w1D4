@@ -49,9 +49,14 @@ public class MyRunner implements CommandLineRunner {
         }
 
 
-        Pizza newPizza = new Pizza(fake.funnyName().name(), fake.number().numberBetween(6, 9), ingredienti, fake.number().numberBetween(800, 1600), fake.bool().bool());
+        Pizza newPizza = new Pizza(fake.funnyName().name(), fake.number().numberBetween(6, 10), ingredienti, fake.number().numberBetween(800, 1600), fake.bool().bool());
 
         pizzaService.savePizza(newPizza);
+
+        System.out.println("------------------ FIND PIZZA BY NAME --------------------");
+        pizzaService.findByName("Al Dente").forEach(System.out::println);
+
+
     }
 
 //    @Override

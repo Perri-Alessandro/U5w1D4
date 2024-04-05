@@ -24,6 +24,10 @@ public class Pizza extends Item {
     public boolean isXl = false;
     private String nome;
 
+    public Pizza() {
+    }
+
+
     public Pizza(double prezzo, long calorie) {
         super(prezzo, calorie);
     }
