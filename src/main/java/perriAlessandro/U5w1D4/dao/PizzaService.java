@@ -36,6 +36,8 @@ public class PizzaService {
             throw new RuntimeException("Nome " + neww.getNome() + " ESISTE GIà. SCEGLIERNE UN'ALTRO.");
         }
         pizzaDAO.save(neww);
+        System.out.println();
         log.info("Pizza salvata correttamente");
+        System.out.println();
     }
 }
