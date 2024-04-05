@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import perriAlessandro.U5w1D1.entities.*;
+import perriAlessandro.U5w1D4.entities.*;
 
 import java.util.ArrayList;
 import java.util.List;

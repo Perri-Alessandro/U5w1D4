@@ -1,10 +1,17 @@
 package perriAlessandro.U5w1D4.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.Getter;
 
 @Getter
+@Entity
 public abstract class Item {
 
+    @Id
+    @GeneratedValue
+    public long id;
     public double prezzo;
     public long calorie;
 
